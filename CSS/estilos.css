@@ -1,0 +1,42 @@
+
+*{
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    font-family:cursive;
+    margin: 0;
+
+}
+.column {
+    padding: 10px; 
+    width: 100%;
+}
+
+.formulario .column--50:nth-child(2) {
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.container--flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn{
+    font-weight: bold;
+    color: white;
+    background: #19A7F3;
+    border-radius: 10%;
+    border-color: #19A7F3;
+}
+.btn:hover {
+    background: #2899D7;
+    border-color: #2899D7;
+}
