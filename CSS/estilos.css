@@ -1,42 +1,47 @@
-
-*{
-    box-sizing: border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.registrotitle{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+}
+.registro{
+    margin-top: 30px;
+    background:#EDF0FE;   
+    margin-top: 50px;
+    margin-right: 350px;
+    margin-left: 350px;
+    border: solid;
+    border-color: #BCDAFC;
+    border-radius: 50px;
+}
+input{
+    background:#EDF0FE; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid rgb(70, 70, 70);
+    outline: none;
 }
 
-body{
-    font-family:cursive;
-    margin: 0;
-
-}
-.column {
-    padding: 10px; 
-    width: 100%;
-}
-
-.formulario .column--50:nth-child(2) {
-    padding: 10px;
-}
-
-.container {
-    width: 100%;
-    margin: 20px auto;
-}
-
-.container--flex {
+.contenedor{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+.columna{
+    padding: 10px;
+    margin: 0 80px;
 }
 .btn{
     font-weight: bold;
     color: white;
-    background: #19A7F3;
-    border-radius: 10%;
-    border-color: #19A7F3;
+    background: #2196F3;
+    border-radius: 10px;
+    border-color: #2196F3;
+    margin-bottom: 30px;
+    width: 20%;
+    height: 30px;
 }
 .btn:hover {
-    background: #2899D7;
-    border-color: #2899D7;
+    background: #0087f6;
+    border-color: #0087f6;
 }
