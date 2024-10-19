@@ -12,6 +12,7 @@ const Menu = () => {
                 <li> <a href="/profesor">Profesor</a></li>
                 <li> <a href="/admin">Admin</a></li>
                 <li> <a href="/estudiante">Estudiante</a></li>
+                <li> <a href="/formstudent">RegistrarEstudiante</a></li>
             </ul>
         </div>
     )
