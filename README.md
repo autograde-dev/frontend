@@ -1,12 +1,19 @@
 # Frontend
 
-## Mockup Figma v 0.0.1
+## Mockup Figma v 0.0.2
 #### Funcionalidades Agregadas 
 #### Se realizó el formato correspondiente para que los profesores puedan:
 
 - Registrase
 - Crear un parcial
 - Crear un enunciado
+- Ver los resultados
+- Ver calendario de parciales
+
+
+#### Se realizó el formato correspondiente para que los estudiantes puedan:
+- Registrase
+- Realizar un parcial
 - Ver los resultados
 - Ver calendario de parciales
 
