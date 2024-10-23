@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 export const useFormEstudiantes = () => {
 
     const [formData, setFormData] = useState({
-        nombre: '',
-        apellido: '',
-        email: '',
+        primerNombre: '',
+        segundoNombre: '',
+        primerApellido: '',
+        segundoApellido: '',
+        documento: '',
+        programa: '',
+        correo: '',
         contrasena: ''
       });
     

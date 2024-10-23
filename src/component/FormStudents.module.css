@@ -65,6 +65,7 @@ body{
   background-color: transparent; 
   box-sizing: border-box;
   padding-left: 0;
+  color: #000;
 }
 
 .formGroup input:focus {
