@@ -3,7 +3,7 @@ import TeacherPage from './pages/Teacher/TeacherPage';
 import AdminPage from './pages/Admin/AdminPage';
 import StudentPage from './pages/Student/StudentPage';
 import LoginPage from './pages/Login/LoginPage';
-
+import FormEstudiantes from './components/Teacher/FormStudents';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/student" element={<StudentPage />} />
         <Route path="/teacher" element={<TeacherPage />} />
         <Route path='/admin' element={<AdminPage/>}/>
-        
+        <Route path="/registrarEstudiante" element={<FormEstudiantes/>}/>
       </Routes>
     </Router>
   );
