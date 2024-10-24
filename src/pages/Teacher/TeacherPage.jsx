@@ -1,5 +1,5 @@
 import React from "react";
-import TeacherMenu from "../component/TeacherMenu";
+import TeacherMenu from "../../components/Teacher/TeacherMenu";
 
 
 const TeacherPage = () => {

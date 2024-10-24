@@ -1,13 +1,10 @@
 import React from "react";
-import LoginForm from "../component/login";
+import Login from "../../components/Auth/login";
 
 
 const LoginPage = () => {
-
-
-    return(
-        
-        <LoginForm/>
+    return (
+        <Login />
     )
 }
 

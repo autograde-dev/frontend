@@ -1,5 +1,5 @@
 import React from "react";
-import AdminMenu from "../component/AdminMenu";
+import AdminMenu from "../../components/Admin/AdminMenu";
 
 const AdminPage = () => {
 
