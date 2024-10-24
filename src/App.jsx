@@ -3,8 +3,8 @@ import TeacherPage from './pages/Teacher/TeacherPage';
 import AdminPage from './pages/Admin/AdminPage';
 import StudentPage from './pages/Student/StudentPage';
 import LoginPage from './pages/Login/LoginPage';
+import FormStudentsPage from './pages/Teacher/FormStudentsPage';
 import FormTeacherPage from './pages/Teacher/FormTeacherPage';
-
 
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
         <Route path="/student" element={<StudentPage />} />
         <Route path="/teacher" element={<TeacherPage />} />
         <Route path='/admin' element={<AdminPage/>}/>
+        <Route path="/formStudent" element={<FormStudentsPage/>}/>
         <Route path="/formteacher" element={<FormTeacherPage/>} />
-        
       </Routes>
     </Router>
   );

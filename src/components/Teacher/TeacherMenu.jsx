@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";  // We need this for navigation
+import { Link } from "react-router-dom";  
 import styles from "./TeacherMenu.module.css";
 
 const TeacherMenu = () => {
