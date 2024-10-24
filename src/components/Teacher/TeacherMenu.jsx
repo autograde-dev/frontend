@@ -7,19 +7,19 @@ const TeacherMenu = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>Panel del Profesor</h2>
       <div className={styles.grid}>
-        <Link to="/registrarEstudiante" className={styles.option}>
+        <Link to="/formStudent" className={styles.option}>
           REGISTRAR ESTUDIANTE
         </Link>
-        <Link to="/misEnunciados" className={styles.option}>
+        <Link to="/myStatements" className={styles.option}>
           MIS ENUNCIADOS
         </Link>
-        <Link to="/misParciales" className={styles.option}>
+        <Link to="/myPartials" className={styles.option}>
           MIS PARCIALES
         </Link>
-        <Link to="/calendarioParciales" className={styles.option}>
+        <Link to="/PartialsCalendar" className={styles.option}>
           CALENDARIO DE PARCIALES
         </Link>
-        <Link to="/resultados" className={styles.option}>
+        <Link to="/results" className={styles.option}>
           RESULTADOS
         </Link>
       </div>
