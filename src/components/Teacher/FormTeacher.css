@@ -44,13 +44,19 @@ input:focus {
 }
 
 .columna {
-    flex: 1;
     margin: 0 20px; 
-    text-align: left;
+    
 }
 
 input::placeholder {
     color: #B0B0B0; 
+}
+
+.contenedor-contra{
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 .contenedorboton {
