@@ -11,29 +11,61 @@ const FormTeacher = () => {
         <h2 className="registrotitle">Registro Profesores</h2>
         <div className="contenedor">
           <div className="columna">
-            <label>Nombres</label>
+            <label>Primer Nombre</label>
             <input
               type="text"
-              name="nombre"
-              value={formData.nombre}
+              name="primerNombre"
+              value={formData.primerNombre}
               onChange={handleChange}
-              placeholder="Nombres"
+              placeholder="Añade el primer nombre"
             />
           </div>
           <div className="columna">
-            <label>Apellidos</label>
+            <label>Segundo Nombre</label>
             <input
               type="text"
-              name="apellido"
-              value={formData.apellido}
+              name="segundoNombre"
+              value={formData.segundoNombre}
               onChange={handleChange}
-              placeholder="Apellidos"
+              placeholder="Añade el segundo nombre"
             />
           </div>
         </div>
         <div className="contenedor">
           <div className="columna">
-            <label>Correo electrónico</label>
+            <label>Primer Apellido</label>
+            <input
+              type="text"
+              name="primerApellido"
+              value={formData.primerApellido}
+              onChange={handleChange}
+              placeholder="Añade el primer apellido"
+            />
+          </div>
+          <div className="columna">
+            <label>Segundo Apellido</label>
+            <input
+              type="text"
+              name="segundoApellido"
+              value={formData.segundoApellido}
+              onChange={handleChange}
+              placeholder="Añade el segundo apellido"
+            />
+          </div>
+        </div>
+        <div className="contenedor">
+          <div className="columna">
+            <label>Documento</label>
+            <input
+              type="text"
+              name="documento"
+              value={formData.documento}
+              onChange={handleChange}
+              placeholder="Añade el documento de identidad"
+            />
+          </div>
+          <div className="columna">
+            <label>Correo Electrónico</label>
             <input
               type="email"
               name="email"
@@ -42,6 +74,8 @@ const FormTeacher = () => {
               placeholder="nombre@email.com"
             />
           </div>
+        </div>
+        <div className="contenedor-contra">
           <div className="columna">
             <label>Contraseña</label>
             <input
@@ -49,10 +83,11 @@ const FormTeacher = () => {
               name="contraseña"
               value={formData.contraseña}
               onChange={handleChange}
-              placeholder="Contraseña"
+              placeholder="Añade una contraseña"
             />
           </div>
         </div>
+
         <div className="contenedorboton">
           <button type="submit" className="btn">Registrar</button>
         </div>
@@ -62,4 +97,3 @@ const FormTeacher = () => {
 };
 
 export default FormTeacher;
-

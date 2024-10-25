@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 
 export const useFormTeacher = () => {
   const [formData, setFormData] = useState({
-    nombre: '',
-    apellido: '',
+    primerNombre: '',
+    segundoNombre: '',
+    primerApellido: '',
+    segundoApellido: '',
+    documento: '',
     email: '',
     contraseña: ''
   });
