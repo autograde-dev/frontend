@@ -1,5 +1,5 @@
 export const mapRoles = {
-    student: "/student",
-    teacher: "/teacher",
+    estudiante: "/student",
+    docente: "/teacher",
     admin: "/admin",
 };
