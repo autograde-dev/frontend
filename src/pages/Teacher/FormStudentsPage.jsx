@@ -1,14 +1,8 @@
 import React from "react";
-import FormStudents from "../../components/Teacher/FormStudents";
+import FormStudents from "./../../components/Students/FormStudents";
 
+const FormStudentsPage = () => {
+  return <FormStudents />;
+};
 
-const FormTeacherPage = () => {
-
-
-    return(
-        
-        <FormStudents/>
-    )
-}
-
-export default FormStudents;
+export default FormStudentsPage;

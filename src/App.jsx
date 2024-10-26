@@ -5,6 +5,7 @@ import StudentPage from './pages/Student/StudentPage';
 import LoginPage from './pages/Login/LoginPage';
 import FormStudentsPage from './pages/Teacher/FormStudentsPage';
 import FormTeacherPage from './pages/Teacher/FormTeacherPage';
+import ExamenPage from './pages/Examen/ExamenPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/admin' element={<AdminPage/>}/>
         <Route path="/formStudent" element={<FormStudentsPage/>}/>
         <Route path="/formteacher" element={<FormTeacherPage/>} />
+        <Route path="/examen" element={<ExamenPage/>} />
       </Routes>
     </Router>
   );

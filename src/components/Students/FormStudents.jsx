@@ -1,5 +1,5 @@
 import styles from "./FormStudents.module.css"
-import { useFormEstudiantes } from './useFormStudents';
+import { useFormEstudiantes } from './hooks/useFormStudents';
 
 const FormEstudiantes = () => {
 

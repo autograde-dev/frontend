@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormTeacher } from './useFormTeacher';
+import { useFormTeacher } from "./hooks/useFormTeacher"
 import './FormTeacher.css';
 
 const FormTeacher = () => {
