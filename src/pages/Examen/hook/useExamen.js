@@ -1,11 +1,26 @@
-import {useState,useRef, useEffect} from "react"
-import * as Minio from 'minio';
+import { useState, useRef, useEffect } from "react";
+import * as Minio from "minio";
+import {
+  minioAccessKey,
+  miniobuket,
+  minioPort,
+  minioSecretKey,
+  minioUrl,
+} from "../../../env";
 
 export const useExamen = () => {
   const [examen, setFileExamen] = useState(null);
   const fileInputRefExamen = useRef();
 
-  const minioClient = useRef();
+  const minioClient = useRef(
+    new Minio.Client({
+      endPoint: minioUrl,
+      port: minioPort,
+      useSSL: true,
+      accessKey: minioAccessKey,
+      secretKey: minioSecretKey,
+    })
+  );
 
   const [calificacion, setFileCalificion] = useState(null);
   const fileInputRefCalificacion = useRef();
@@ -39,22 +54,30 @@ export const useExamen = () => {
   const handleFileInputCalificaionClick = () => {
     fileInputRefCalificacion.current.click();
   };
-  
 
-  const uploadExamenMinion = () => {
+  const uploadExamenMinion = async () => {
+    const exists = await minioClient.bucketExists(miniobuket);
+    if (!exists) {
+      return;
+    }
+    const result = await minioClient.current.fPutObject(
+      miniobuket,
+      examen.name,
+      file
+    );
+  };
 
-  }
-
-
-  useEffect(() => {
-   minioClient.current = new Minio.Client({
-        endPoint: 'play.min.io',
-        port: 9000,
-        useSSL: true,
-        accessKey: 'Q3AM3UQ867SPQQA43P2F',
-        secretKey: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG',
-      })
-  },[])
+  const uploadCalificaionMinion = async () => {
+    const exists = await minioClient.bucketExists(miniobuket);
+    if (!exists) {
+      return;
+    }
+    const result = await minioClient.current.fPutObject(
+      miniobuket,
+      calificacion.name,
+      calificacion
+    );
+  };
 
   return {
     examen,
@@ -64,6 +87,6 @@ export const useExamen = () => {
     handleFileInputExamenClick,
     handleFileInputCalificaionClick,
     handleFileChangeExamen,
-    handleFileChangeCalificacion
-  }
+    handleFileChangeCalificacion,
+  };
 };
