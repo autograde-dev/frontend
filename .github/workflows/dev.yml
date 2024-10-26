@@ -3,7 +3,7 @@ name: Publish Docker Image
 on:
   push:
     branches:
-      - action-pull-images  # Cambia a la rama deseada para activar el workflow
+      - action_pull_images  # Cambia a la rama deseada para activar el workflow
 
 jobs:
   build-and-push:
