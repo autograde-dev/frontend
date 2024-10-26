@@ -9,6 +9,19 @@ import {
 } from "../../../env";
 
 export const useExamen = () => {
+  
+
+  // Form 
+ 
+ 
+
+  const handleChange = (e) => {
+     setForm({
+        ...form,
+        [e.target.name] : e.target.value
+     })
+  }
+
   const [examen, setFileExamen] = useState(null);
   const fileInputRefExamen = useRef();
 
@@ -79,6 +92,8 @@ export const useExamen = () => {
     );
   };
 
+
+
   return {
     examen,
     calificacion,
@@ -88,5 +103,6 @@ export const useExamen = () => {
     handleFileInputCalificaionClick,
     handleFileChangeExamen,
     handleFileChangeCalificacion,
+    handleChange
   };
 };
