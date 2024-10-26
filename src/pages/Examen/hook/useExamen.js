@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import * as Minio from "minio";
 import {
   minioAccessKey,
   miniobuket,
@@ -7,31 +6,30 @@ import {
   minioSecretKey,
   minioUrl,
 } from "../../../env";
+import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 
 export const useExamen = () => {
-  
-
-  // Form 
- 
- 
+  // Form
 
   const handleChange = (e) => {
-     setForm({
-        ...form,
-        [e.target.name] : e.target.value
-     })
-  }
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const [examen, setFileExamen] = useState(null);
   const fileInputRefExamen = useRef();
 
   const minioClient = useRef(
-    new Minio.Client({
-      endPoint: minioUrl,
-      port: minioPort,
-      useSSL: true,
-      accessKey: minioAccessKey,
-      secretKey: minioSecretKey,
+    new S3Client({
+      endpoint: minioUrl, // Cambia esto a tu endpoint de MinIO
+      region: "us-east-1", // Puedes usar cualquier región válida
+      credentials: {
+        accessKeyId: minioAccessKey, // Usa tus credenciales de MinIO
+        secretAccessKey: minioSecretKey,
+      },
+      forcePathStyle: true, // Necesario para compatibilidad con MinIO
     })
   );
 
@@ -69,30 +67,24 @@ export const useExamen = () => {
   };
 
   const uploadExamenMinion = async () => {
-    const exists = await minioClient.bucketExists(miniobuket);
-    if (!exists) {
-      return;
-    }
-    const result = await minioClient.current.fPutObject(
-      miniobuket,
-      examen.name,
-      file
-    );
+    const command = new PutObjectCommand({
+      Bucket: miniobuket,
+      Key: examen.name,
+      Body: examen,
+      ContentType: examen.type,
+    });
+    const result = await minioClient.current.send(command);
   };
 
   const uploadCalificaionMinion = async () => {
-    const exists = await minioClient.bucketExists(miniobuket);
-    if (!exists) {
-      return;
-    }
-    const result = await minioClient.current.fPutObject(
-      miniobuket,
-      calificacion.name,
-      calificacion
-    );
+    const command = new PutObjectCommand({
+      Bucket: miniobuket,
+      Key: calificacion.name,
+      Body: calificacion,
+      ContentType: calificacion.type,
+    });
+    const result = await minioClient.current.send(command);
   };
-
-
 
   return {
     examen,
@@ -103,6 +95,6 @@ export const useExamen = () => {
     handleFileInputCalificaionClick,
     handleFileChangeExamen,
     handleFileChangeCalificacion,
-    handleChange
+    handleChange,
   };
 };
