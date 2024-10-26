@@ -19,6 +19,15 @@ const Login = () => {
         }
     };
 
+    /*if (email && password && mapRoles[role]) {
+      const token = 'tu_token_aqui'; // Reemplaza esto con el token real que obtengas
+      localStorage.setItem('token', token); // Guardar el token en localStorage
+      navigate(mapRoles[role]); // Redirigir según el rol
+  } else {
+      alert('Por favor, completa todos los campos y selecciona un rol válido.');
+  }
+};*/
+
     return (
         <div className="h-screen flex justify-center items-center bg-gray-900 font-roboto text-white">
           <form onSubmit={handleLogin} className="bg-gray-800 p-8 rounded-lg shadow-lg">
