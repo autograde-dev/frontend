@@ -81,7 +81,7 @@ const FormEstudiantes = () => {
               <input
                 type="email"
                 name="correo"
-                value={formData.email}
+                value={formData.correo}
                 onChange={handleChange}
                 placeholder="Añade un correo electrónico"
               />
