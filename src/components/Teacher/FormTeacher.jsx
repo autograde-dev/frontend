@@ -67,9 +67,9 @@ const FormTeacher = () => {
           <div className="columna">
             <label>Correo Electrónico</label>
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="correo"
+              name="correo"
+              value={formData.correo}
               onChange={handleChange}
               placeholder="nombre@email.com"
             />
@@ -80,8 +80,8 @@ const FormTeacher = () => {
             <label>Contraseña</label>
             <input
               type="password"
-              name="contraseña"
-              value={formData.contraseña}
+              name="contrasena"
+              value={formData.contrasena}
               onChange={handleChange}
               placeholder="Añade una contraseña"
             />
