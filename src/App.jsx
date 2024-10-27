@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import TeacherPage from './pages/Teacher/TeacherPage';
 import AdminPage from './pages/Admin/AdminPage';
@@ -25,4 +26,5 @@ function App() {
   );
 }
 
-export default App;
+
+export default App;
