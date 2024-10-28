@@ -12,8 +12,8 @@ export const useFormEstudiantes = () => {
     correo: '',
     contrasena: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false); // Para manejar el estado de envío
-  const [error, setError] = useState(null); // Para manejar errores
+  const [isSubmitting, setIsSubmitting] = useState(false); 
+  const [error, setError] = useState(null); 
 
   const handleChange = (e) => {
     setFormData({
