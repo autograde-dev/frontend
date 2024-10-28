@@ -1,6 +1,6 @@
 # Frontend
 
-## Mockup Figma v 0.0.3      24oct2024
+## Mockup Figma v 0.0.4      27oct2024
 #### Funcionalidades Agregadas 
 #### Se realizó el formato correspondiente para que los profesores puedan:
 
@@ -16,6 +16,12 @@
 - Realizar un parcial
 - Ver los resultados
 - Ver calendario de parciales
+
+#### Control de cambios
+- 27oct2024 Ajuste en la pantalla de examenes pendientes
+- 27oct2024 Ajuste en la pantalla de creación de parcial
+- 27oct2024 Ajuste en las opciones de menú
+
 
 
 ##### Observaciones
