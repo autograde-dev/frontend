@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";  // We need this for navigation
+import { Link } from "react-router-dom";  
 import styles from "./TeacherMenu.module.css";
 
 const TeacherMenu = () => {
@@ -10,22 +10,16 @@ const TeacherMenu = () => {
         <Link to="/formStudent" className={styles.option}>
           REGISTRAR ESTUDIANTE
         </Link>
-        <Link to="/myStatements" className={styles.option}>
-          MIS ENUNCIADOS
+        <Link to="/createExam" className={styles.option}>
+          CREAR EXAMEN
         </Link>
-        <Link to="/myPartials" className={styles.option}>
-          MIS PARCIALES
-        </Link>
-        <Link to="/PartialsCalendar" className={styles.option}>
-          CALENDARIO DE PARCIALES
-        </Link>
-        <Link to="/results" className={styles.option}>
-          RESULTADOS
+        <Link to="/resultsTeacher" className={styles.option}>
+          VER RESULTADOS
         </Link>
       </div>
     </div>
   );
 };
   
-  export default TeacherMenu;
+export default TeacherMenu;
   
