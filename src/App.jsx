@@ -4,7 +4,7 @@ import TeacherPage from './pages/Teacher/TeacherPage';
 import AdminPage from './pages/Admin/AdminPage';
 import StudentPage from './pages/Student/StudentPage';
 import LoginPage from './pages/Login/LoginPage';
-import FormStudentsPage from './pages/Teacher/FormStudentsPage';
+import FormStudentsPage from './pages/Student/FormStudentsPage';
 import FormTeacherPage from './pages/Teacher/FormTeacherPage';
 import ExamenPage from './pages/Examen/ExamenPage';
 
