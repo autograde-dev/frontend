@@ -62,11 +62,3 @@
 .option:nth-child(3) {
   background: linear-gradient(135deg, #32CD32, #2EB82E);
 }
-
-.option:nth-child(4) {
-  background: linear-gradient(135deg, #A9A9A9, #808080);
-}
-
-.option:nth-child(5) {
-  background: linear-gradient(135deg, #20B2AA, #17A2B8);
-}
