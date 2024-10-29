@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./FormStudents.module.css"
 import { useFormEstudiantes } from './hooks/useFormStudents';
 
@@ -81,7 +82,7 @@ const FormEstudiantes = () => {
               <input
                 type="email"
                 name="correo"
-                value={formData.email}
+                value={formData.correo}
                 onChange={handleChange}
                 placeholder="Añade un correo electrónico"
               />

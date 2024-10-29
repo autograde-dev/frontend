@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 
 export const useFormTeacher = () => {
   const [formData, setFormData] = useState({
@@ -7,9 +8,11 @@ export const useFormTeacher = () => {
     primerApellido: '',
     segundoApellido: '',
     documento: '',
-    email: '',
-    contraseña: ''
+    correo: '',
+    contrasena: ''
   });
+
+  const [mensaje, setMensaje] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -18,14 +21,24 @@ export const useFormTeacher = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Datos enviados:', formData);
+
+    try {
+      const response = await axios.post('URL_DEL_BACKEND', formData);
+      console.log('Respuesta del servidor:', response.data);
+      setMensaje('Datos enviados correctamente');
+    } catch (error) {
+      console.error('Error al enviar los datos:', error);
+      setMensaje('Error al enviar los datos');
+    }
   };
 
   return {
     formData,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    mensaje
   };
 };
