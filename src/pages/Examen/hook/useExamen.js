@@ -20,7 +20,7 @@ export const useExamen = () => {
 
   const [examen, setFileExamen] = useState(null);
   const fileInputRefExamen = useRef();
-
+ 
   const minioClient = useRef(
     new S3Client({
       endpoint: minioUrl, // Cambia esto a tu endpoint de MinIO
@@ -36,7 +36,8 @@ export const useExamen = () => {
   const [calificacion, setFileCalificion] = useState(null);
   const fileInputRefCalificacion = useRef();
 
-  const handleFileChangeExamen = (e) => {
+  const handleFileChangeExamen = async (e) => {
+    debugger
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       if (selectedFile.size > 5 * 1024 * 1024) {
@@ -44,10 +45,12 @@ export const useExamen = () => {
         return;
       }
       setFileExamen(selectedFile);
+      await uploadMinion(selectedFile)
     }
   };
 
-  const handleFileChangeCalificacion = (e) => {
+  const handleFileChangeCalificacion = async (e) => {
+    debugger
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       if (selectedFile.size > 5 * 1024 * 1024) {
@@ -55,6 +58,7 @@ export const useExamen = () => {
         return;
       }
       setFileCalificion(selectedFile);
+      await uploadMinion(selectedFile);
     }
   };
 
@@ -66,25 +70,23 @@ export const useExamen = () => {
     fileInputRefCalificacion.current.click();
   };
 
-  const uploadExamenMinion = async () => {
+  const uploadMinion = async (file) => {
     const command = new PutObjectCommand({
       Bucket: miniobuket,
-      Key: examen.name,
-      Body: examen,
-      ContentType: examen.type,
+      Key: file.name,
+      Body: file,
+      ContentType: file.type,
     });
-    const result = await minioClient.current.send(command);
+    try {
+      const result = await minioClient.current.send(command);
+      alert("Archivo subido")
+    } catch (error) {
+      console.error(error);
+      alert("Ocurrio un erro al subir archivo")
+    }
   };
 
-  const uploadCalificaionMinion = async () => {
-    const command = new PutObjectCommand({
-      Bucket: miniobuket,
-      Key: calificacion.name,
-      Body: calificacion,
-      ContentType: calificacion.type,
-    });
-    const result = await minioClient.current.send(command);
-  };
+
 
   return {
     examen,
