@@ -6,6 +6,7 @@ import StudentPage from './pages/Student/StudentPage';
 import LoginPage from './pages/Login/LoginPage';
 import FormStudentsPage from './pages/Student/FormStudentsPage';
 import FormTeacherPage from './pages/Teacher/FormTeacherPage';
+import CreateExamPage from './pages/CreateExam/CreateExamPage';
 import ExamenPage from './pages/Examen/ExamenPage';
 
 
@@ -19,8 +20,9 @@ function App() {
         <Route path="/teacher" element={<TeacherPage />} />
         <Route path='/admin' element={<AdminPage/>}/>
         <Route path="/formStudent" element={<FormStudentsPage/>}/>
-        <Route path="/formteacher" element={<FormTeacherPage/>} />
-        <Route path="/examen" element={<ExamenPage/>} />
+        <Route path="/formteacher" element={<FormTeacherPage/>}/>
+        <Route path="/createExam" element={<CreateExamPage/>}/>
+        <Route path="/examen" element={<ExamenPage/>}/>
       </Routes>
     </Router>
   );
