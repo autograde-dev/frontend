@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+.formContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.formRegister {
+  background-color: #e9f2ff; 
+  padding: 15px 50px 40px 50px;
+  border-radius: 30px;
+  width: 630px;
+  text-align: center;
+  border: 3px solid #BCDAFC; 
+}
+
+.formRegister h2 {
+  margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  color: #000;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.formGroup{
+  margin-bottom: 25px;
+  text-align: left;
+  width: 48%;
+}
+
+.formGroup label {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none; 
+  border-bottom: 2px solid #ccc; 
+  border-radius: 0; 
+  background-color: transparent; 
+  box-sizing: border-box;
+  padding-left: 0;
+  color: #000;
+}
+
+.formGroup input:focus {
+  border-bottom: 2px solid #2980b9; 
+  outline: none; 
+}
+
+.formGroup input::placeholder {
+  color: #888;
+}
+
+.button{
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 30%;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+.button:focus {
+    outline: none; 
+}

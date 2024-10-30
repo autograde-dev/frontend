@@ -1,0 +1,32 @@
+name: Publish Docker Image
+
+on:
+  push:
+    branches:
+      - action_pull_images  # Cambia a la rama deseada para activar el workflow
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Clona el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Inicia sesión en Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # 3. Construye la imagen usando el Dockerfile del directorio raíz
+      - name: Build Docker Image
+        run: |
+          docker build -t andres207/autograde-dev:latest -f Dockerfile .
+
+      # 4. Realiza el push a Docker Hub
+      - name: Push Docker Image to Docker Hub
+        run: |
+          docker push andres207/autograde-dev:latest
