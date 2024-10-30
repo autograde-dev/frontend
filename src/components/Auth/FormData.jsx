@@ -3,12 +3,13 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import { mapRoles } from '../config/roles';
-import logo from '../../assets/logo.png';
+import { useAuth } from './AuthContext';
 
 
-function Login() {
 
-    const [roles, setRoles] = useState("");
+function LoginForm() {
+
+    const { setUserRole } = useAuth();
     const [formData, setFormData] = useState({
         client_id: '',
         grant_type: '',
@@ -58,7 +59,9 @@ function Login() {
 
             //Encontrar el rol que coincida con 'mapRoles'
             const userRole = roles.find(role => mapRoles[role]);
+            //Redirigir el usuario a su panel según el Rol
             if (userRole) {
+                setUserRole(userRole);
                 navigate(mapRoles[userRole]); //Redirecciona con base en el rol
             } else {
                 alert('Rol no autorizado')
@@ -103,4 +106,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default LoginForm;
