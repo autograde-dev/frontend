@@ -19,6 +19,7 @@ function LoginForm() {
 
     });
 
+    const selectedRole = useState('');
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -94,7 +95,7 @@ function LoginForm() {
                 onChange={handleChange}
                 className="w-full mb-4 p-2 bg-gray-700 text-white rounded"
             />
-            <select value={roles} className='w-full mb-4 p-2 bg-gray-700 text-white rounded'>
+            <select value={selectedRole} className='w-full mb-4 p-2 bg-gray-700 text-white rounded'>
                 <option value="">Rol</option>
                 <option value="estudiante">Estudiante</option>
                 <option value="docente">Docente</option>

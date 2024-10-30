@@ -62,7 +62,7 @@ const StudentList = () => {
                   onChange={handleSelectAll}
                 />
               </TableCell>
-              <TableCell>Nombre del estudiante</TableCell>
+              <TableCell>Seleccionar Todos los Estudiantes</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

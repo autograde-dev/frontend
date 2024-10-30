@@ -10,18 +10,33 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import StudentList from './StudentList';
 import { useNavigate } from 'react-router-dom';
+import QuestionForm from './QuestionForm';
 
 const CreateExam = () => {
+  const [examName, setExamName] = useState('');
+  const [examDescription, setExamDescription] = useState('');
   const [startDate, setStartDate] = useState(dayjs());
   const [endDate, setEndDate] = useState(dayjs().add(1, 'hour'));
+  const [questions, setQuestions] = useState([]);
+  const [students, setStudents] = useState([]);
   const navigate = useNavigate();
 
   const handleCancel = () => {
     navigate('/teacher');
   };
 
-  const handleAssignQuestions = () => {
-    navigate('/assignQuestions');
+  const handleAssignExam = () => { // Empaqueta los datos del examen
+
+    const examData = {
+      name: examName,
+      description: examDescription,
+      startDate: startDate.toISOString(),
+      endDate: endDate.toISOString(),
+      questions,
+      students,
+    };
+    console.log("Datos del examen asignado:", examData);  // Log para enviar los datos al server
+
   };
 
   return (
@@ -33,20 +48,20 @@ const CreateExam = () => {
         alignItems: 'center',
         padding: 2,
         boxSizing: 'border-box',
-        justifyContent: 'center', 
+        justifyContent: 'center',
       }}
     >
-      <Typography variant="h3" component="h1" sx={{ 
-          textAlign: 'center', 
-          fontFamily: "'Arial', sans-serif", 
-          fontWeight: 'bold',
-          marginBottom: '2rem'
+      <Typography variant="h3" component="h1" sx={{
+        textAlign: 'center',
+        fontFamily: "'Arial', sans-serif",
+        fontWeight: 'bold',
+        marginBottom: '2rem'
       }}>
         Creación de Examen
       </Typography>
 
       <Grid container spacing={4} sx={{ maxWidth: '1300px', width: '100%' }}>
-        
+
         {/* Nombre y Descripción */}
         <Grid item xs={12} md={6}>
           <TextField
@@ -55,6 +70,8 @@ const CreateExam = () => {
             placeholder="Añade el nombre del examen"
             fullWidth
             sx={{ marginBottom: 2 }}
+            value={examName}
+            onChange={(e) => setExamName(e.target.value)}
           />
           <TextField
             label="Descripción"
@@ -63,6 +80,8 @@ const CreateExam = () => {
             variant="outlined"
             placeholder="Añade una descripción"
             fullWidth
+            value={examDescription}
+            onChange={(e) => setExamDescription(e.target.value)}
           />
         </Grid>
 
@@ -92,37 +111,39 @@ const CreateExam = () => {
             Seleccione los estudiantes que presentarán el examen
           </Typography>
           <Box sx={{ maxWidth: '700px', margin: 'auto' }}>
-            <StudentList />
+            <StudentList setStudents={setStudents} /> {/* Pasamos la función de actualización */}
           </Box>
         </Grid>
       </Grid>
 
+      {/* Creador de Preguntas para Examen */}
+      <QuestionForm setQuestions={setQuestions} />
       {/* Botones */}
       <Box sx={{
-          display: 'flex',
-          gap: 2,
-          width: '100%',
-          maxWidth: '500px',
-          justifyContent: 'center',
-          marginTop: 5,
-        }}
+        display: 'flex',
+        gap: 2,
+        width: '100%',
+        maxWidth: '500px',
+        justifyContent: 'center',
+        marginTop: 5,
+      }}
       >
-         <Button 
-            variant="contained" 
-            color="error" 
-            sx={{ width: '100%', height: '45px', fontSize: '18px' }}
-            onClick={handleCancel}
-         >
+        <Button
+          variant="contained"
+          color="error"
+          sx={{ width: '100%', height: '45px', fontSize: '18px' }}
+          onClick={handleCancel}
+        >
           CANCELAR
         </Button>
-          <Button 
-            variant="contained" 
-            color="primary" 
-            sx={{ width: '100%', height: '45px', fontSize: '18px' }}
-            onClick={handleAssignQuestions}
-          >
-            ASIGNAR PREGUNTAS
-          </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ width: '100%', height: '45px', fontSize: '18px' }}
+          onClick={handleAssignExam}
+        >
+          ASIGNAR EXAMEN
+        </Button>
       </Box>
     </Box>
   );
