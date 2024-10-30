@@ -8,6 +8,8 @@ import FormStudentsPage from './pages/Student/FormStudentsPage';
 import FormTeacherPage from './pages/Teacher/FormTeacherPage';
 import CreateExamPage from './pages/CreateExam/CreateExamPage';
 import ExamenPage from './pages/Examen/ExamenPage';
+import AssignQuestionsPage from './pages/assignQuestions/assignQuestionsPage';
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
         <Route path="/formteacher" element={<FormTeacherPage/>}/>
         <Route path="/createExam" element={<CreateExamPage/>}/>
         <Route path="/examen" element={<ExamenPage/>}/>
+        <Route path="/AssignQuestions" element={<AssignQuestionsPage/>}/>
       </Routes>
     </Router>
   );
